@@ -1,0 +1,10 @@
+Mutation:
+  type: object
+  config:
+    fields:
+      createAgent:
+        type: Agent
+        resolve: "@=mutation('create_agent', [args])"
+        args:
+          input:
+            type: AgentInput!

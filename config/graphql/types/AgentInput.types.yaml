@@ -1,0 +1,11 @@
+AgentInput:
+  type: "input-object"
+  config:
+    fields:
+      lastname:
+        type: "String!"
+      firstname:
+        type: "String!"
+      birthdate:
+        type: "DateTime"
+

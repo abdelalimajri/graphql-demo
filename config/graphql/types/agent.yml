@@ -1,0 +1,16 @@
+Agent:
+  type: object
+  config:
+    description: "An Agent"
+    fields:
+      id:
+        type: "Int!"
+        description: "The unique ID of the agent."
+      firstname:
+        type: "String!"
+      lastname:
+        type: "String!"
+      birthDate:
+        type: "Date"
+      errors:
+        type: "[String]"

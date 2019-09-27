@@ -1,0 +1,7 @@
+Query:
+  type: object
+  config:
+    fields:
+      Agent:
+        type: '[Agent]'
+        resolve: "@=resolver('get_agents')"
