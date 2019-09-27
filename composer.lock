@@ -4,8 +4,65 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87e9bef8567a0885ba413f1b2c23f7c9",
+    "content-hash": "53fed1ecbaa4c3db49896776d58abc60",
     "packages": [
+        {
+            "name": "assoconnect/graphql-mutation-validator-bundle",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/assoconnect/graphql-mutation-validator-bundle.git",
+                "reference": "5945a2c9ded6c9da28a9ae9ceb7d3de0a1893012"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/assoconnect%2Fgraphql-mutation-validator-bundle/repository/archive.zip?sha=5945a2c9ded6c9da28a9ae9ceb7d3de0a1893012",
+                "reference": "5945a2c9ded6c9da28a9ae9ceb7d3de0a1893012",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "^1.6",
+                "overblog/graphql-bundle": "^0.11",
+                "php": "^7.1",
+                "symfony/validator": "^4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0",
+                "symfony/console": "^4.0",
+                "symfony/security-bundle": "^4.0",
+                "symfony/templating": "^4.0",
+                "symfony/twig-bundle": "^4.0",
+                "symfony/yaml": "^4.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "AssoConnect\\GraphQLMutationValidatorBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sylvain Fabre"
+                },
+                {
+                    "name": "Assoconnect",
+                    "homepage": "https://www.assoconnect.com"
+                }
+            ],
+            "description": "Provide a base class to validate user data sent in a GraphQL mutation and return validations errors.",
+            "keywords": [
+                "graphql",
+                "validation"
+            ],
+            "time": "2018-08-28T18:29:57+00:00"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.7.0",
@@ -1377,47 +1434,44 @@
         },
         {
             "name": "overblog/graphql-bundle",
-            "version": "v0.12.3",
+            "version": "v0.11.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overblog/GraphQLBundle.git",
-                "reference": "54d1e821c3a2730b49643f530ad2f2bfcccb7595"
+                "reference": "76ded4f67f3e9698475b61beed8aaed30f519028"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/overblog/GraphQLBundle/zipball/54d1e821c3a2730b49643f530ad2f2bfcccb7595",
-                "reference": "54d1e821c3a2730b49643f530ad2f2bfcccb7595",
+                "url": "https://api.github.com/repos/overblog/GraphQLBundle/zipball/76ded4f67f3e9698475b61beed8aaed30f519028",
+                "reference": "76ded4f67f3e9698475b61beed8aaed30f519028",
                 "shasum": ""
             },
             "require": {
-                "ext-json": "*",
-                "php": ">=7.1",
+                "php": ">=5.6",
                 "psr/log": "^1.0",
-                "symfony/config": "^3.4 || ^4.0",
-                "symfony/dependency-injection": "^3.4 || ^4.0",
-                "symfony/event-dispatcher": "^3.4 || ^4.0",
-                "symfony/expression-language": "^3.4 || ^4.0",
-                "symfony/framework-bundle": "^3.4 || ^4.0",
-                "symfony/options-resolver": "^3.4 || ^4.0",
-                "symfony/property-access": "^3.4 || ^4.0",
-                "webonyx/graphql-php": "^0.13.5"
+                "symfony/config": "^3.1 || ^4.0",
+                "symfony/dependency-injection": "^3.1 || ^4.0",
+                "symfony/event-dispatcher": "^3.1 || ^4.0",
+                "symfony/expression-language": "^3.1 || ^4.0",
+                "symfony/framework-bundle": "^3.1 || ^4.0",
+                "symfony/options-resolver": "^3.1 || ^4.0",
+                "symfony/property-access": "^3.1 || ^4.0",
+                "webonyx/graphql-php": "^0.11.2 || ^0.12.0 || ^0.13.0"
             },
             "replace": {
                 "overblog/graphql-php-generator": "self.version"
             },
             "require-dev": {
-                "doctrine/orm": "^2.5",
-                "phpunit/phpunit": "<8.3",
+                "phpunit/phpunit": "^5.7.26 || ^6.0 || ^7.2",
                 "react/promise": "^2.5",
-                "symfony/asset": "^3.4 || ^4.0",
-                "symfony/browser-kit": "^3.4 || ^4.0",
-                "symfony/console": "^3.4 || ^4.0",
-                "symfony/css-selector": "^3.4 || ^4.0",
-                "symfony/phpunit-bridge": "^3.4 || ^4.0",
-                "symfony/process": "^3.4 || ^4.0",
-                "symfony/security-bundle": "^3.4 || ^4.0",
-                "symfony/validator": "^3.4 || ^4.0",
-                "symfony/yaml": "^3.4 || ^4.0"
+                "symfony/asset": "^3.1 || ^4.0",
+                "symfony/browser-kit": "^3.1 || ^4.0",
+                "symfony/console": "^3.1 || ^4.0",
+                "symfony/css-selector": "^3.1 || ^4.0",
+                "symfony/phpunit-bridge": "^3.1 || ^4.0",
+                "symfony/process": "^3.1 || ^4.0",
+                "symfony/security-bundle": "^3.1 || ^4.0",
+                "symfony/yaml": "^3.1 || ^4.0"
             },
             "suggest": {
                 "nelmio/cors-bundle": "For more flexibility when using CORS prefight",
@@ -1427,7 +1481,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.12-dev"
+                    "dev-master": "0.11-dev"
                 }
             },
             "autoload": {
@@ -1451,7 +1505,7 @@
                 "Relay",
                 "graphql"
             ],
-            "time": "2019-09-18T12:18:38+00:00"
+            "time": "2019-08-02T11:06:00+00:00"
         },
         {
             "name": "psr/cache",
@@ -3643,6 +3697,82 @@
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
             "time": "2019-08-07T11:52:19+00:00"
+        },
+        {
+            "name": "symfony/translation",
+            "version": "v4.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation.git",
+                "reference": "28498169dd334095fa981827992f3a24d50fed0f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/28498169dd334095fa981827992f3a24d50fed0f",
+                "reference": "28498169dd334095fa981827992f3a24d50fed0f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/translation-contracts": "^1.1.6"
+            },
+            "conflict": {
+                "symfony/config": "<3.4",
+                "symfony/dependency-injection": "<3.4",
+                "symfony/yaml": "<3.4"
+            },
+            "provide": {
+                "symfony/translation-implementation": "1.0"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "~3.4|~4.0",
+                "symfony/console": "~3.4|~4.0",
+                "symfony/dependency-injection": "~3.4|~4.0",
+                "symfony/finder": "~2.8|~3.0|~4.0",
+                "symfony/http-kernel": "~3.4|~4.0",
+                "symfony/intl": "~3.4|~4.0",
+                "symfony/service-contracts": "^1.1.2",
+                "symfony/var-dumper": "~3.4|~4.0",
+                "symfony/yaml": "~3.4|~4.0"
+            },
+            "suggest": {
+                "psr/log-implementation": "To use logging capability in translator",
+                "symfony/config": "",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Translation\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Translation Component",
+            "homepage": "https://symfony.com",
+            "time": "2019-08-26T08:55:16+00:00"
         },
         {
             "name": "symfony/translation-contracts",

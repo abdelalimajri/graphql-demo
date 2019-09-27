@@ -29,8 +29,16 @@ class Agent
      * @ORM\Column(type="string", length=64)
      *
      * @Assert\NotBlank()
+     *
      */
     private $firstname;
+
+    /**
+     * @ORM\Column(type="string", length=64, nullable=true)
+     *
+     * @Assert\Email()
+     */
+    private $email;
 
     /**
      * @ORM\Column(type="date", nullable=true)
@@ -79,6 +87,19 @@ class Agent
     public function setBirthDate(?\DateTimeInterface $birthDate): self
     {
         $this->birthDate = $birthDate;
+
+        return $this;
+    }
+
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(?string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }

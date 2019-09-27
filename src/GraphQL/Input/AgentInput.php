@@ -3,22 +3,34 @@
 namespace App\GraphQL\Input;
 
 
+use App\Entity\Agent;
+use AssoConnect\GraphQLMutationValidatorBundle\Input\RequestObject;
 use Symfony\Component\Validator\Constraints as Assert;
+use AssoConnect\GraphQLMutationValidatorBundle\Validator\Constraints as AssoConnectAssert;
 
-class AgentInput
+
+/**
+ * @AssoConnectAssert\GraphQLRequestObject()
+ */
+class AgentInput extends RequestObject
 {
     /**
-     * @Assert\NotBlank()
+     * @see Agent::$firstname
      */
     public $firstname;
 
     /**
-     * @Assert\NotBlank()
+     * @see Agent::$lastname
      */
     public $lastname;
 
     /**
-     * @Assert\NotBlank()
+     * @see Agent::$birthDate
      */
     public $birthDate;
+
+    /**
+     * @see Agent::$email
+     */
+    public $email;
 }

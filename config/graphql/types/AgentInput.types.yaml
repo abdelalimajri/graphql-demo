@@ -8,4 +8,5 @@ AgentInput:
         type: "String!"
       birthdate:
         type: "DateTime"
-
+      email:
+        type: "String"

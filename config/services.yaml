@@ -8,6 +8,7 @@ parameters:
 services:
     # default configuration for services in *this* file
     _defaults:
+        public: true
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
@@ -23,5 +24,10 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    App\Resolver\:
+        resource: '../src/Resolver'
+        tags: ['overblog_graphql.resolver']
+
+    App\Mutation\:
+        resource: '../src/Mutation'
+        tags: ['overblog_graphql.mutation']

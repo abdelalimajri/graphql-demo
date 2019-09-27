@@ -7,15 +7,16 @@ use App\Entity\Agent;
 use App\Form\AgentType;
 use App\GraphQL\Input\AgentInput;
 use App\Repository\AgentRepository;
+use AssoConnect\GraphQLMutationValidatorBundle\Validator\MutationValidator;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use GraphQL\Error\UserError;
 use Overblog\GraphQLBundle\Definition\Argument;
 use Overblog\GraphQLBundle\Definition\Resolver\AliasedInterface;
+use Overblog\GraphQLBundle\Definition\Resolver\MutationInterface;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
-use Overblog\GraphQLBundle\Definition\Resolver\MutationInterface;
 
 class AgentMutation implements MutationInterface, AliasedInterface
 {
@@ -24,8 +25,9 @@ class AgentMutation implements MutationInterface, AliasedInterface
      * @EntityManager
      */
     protected $entityManager;
+
     /**
-     * @ValidatorInterface
+     * @var MutationValidator
      */
     protected $validator;
 
@@ -39,7 +41,7 @@ class AgentMutation implements MutationInterface, AliasedInterface
      */
     private $formFactory;
 
-    public function __construct(EntityManagerInterface $entityManager, FormFactoryInterface  $formFactory, ValidatorInterface $validator, AgentRepository $agentRepository)
+    public function __construct(EntityManagerInterface $entityManager, FormFactoryInterface  $formFactory, MutationValidator $validator, AgentRepository $agentRepository)
     {
         $this->entityManager = $entityManager;
         $this->formFactory = $formFactory;
@@ -51,18 +53,18 @@ class AgentMutation implements MutationInterface, AliasedInterface
      * @param Argument $args
      *
      * @return Agent
+     * @throws \AssoConnect\GraphQLMutationValidatorBundle\Exception\UserException
      */
     public function createAgent(Argument $args)
     {
+        $input = new AgentInput($args);
+
+        $this->validator->validate($input);
+
         // Insert your business logic
         $agent = new Agent();
-
         $form = $this->formFactory->create(AgentType::class, $agent);
         $form->submit($args['input']);
-
-        if(!$form->isValid()) {
-            throw new UserError("form error");
-        }
 
         // Persist in database
         $this->entityManager->persist($agent);
