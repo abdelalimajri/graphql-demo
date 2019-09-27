@@ -10,7 +10,11 @@ Agent:
         type: "String!"
       lastname:
         type: "String!"
+        access: "@=isAuthenticated()"
       birthDate:
         type: "Date"
-      errors:
+#        access: "@=isAuthenticated()"
+      email:
         type: "[String]"
+#        access: "@=isAuthenticated()"
+

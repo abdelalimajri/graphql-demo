@@ -36,7 +36,9 @@ class Agent
     /**
      * @ORM\Column(type="string", length=64, nullable=true)
      *
+     * @Assert\NotBlank()
      * @Assert\Email()
+     *
      */
     private $email;
 

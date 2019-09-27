@@ -12,4 +12,5 @@ return [
     Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
     Overblog\GraphQLBundle\OverblogGraphQLBundle::class => ['all' => true],
     AssoConnect\GraphQLMutationValidatorBundle\AssoConnectGraphQLMutationValidatorBundle::class => ['all' => true],
+    Symfony\Bundle\SecurityBundle\SecurityBundle::class => ['all' => true],
 ];

@@ -8,6 +8,7 @@ use App\Repository\AgentRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Overblog\GraphQLBundle\Definition\Resolver\AliasedInterface;
 use Overblog\GraphQLBundle\Definition\Resolver\ResolverInterface;
+use Symfony\Component\Security\Core\Security;
 
 class AgentResolver implements ResolverInterface, AliasedInterface
 {
@@ -18,13 +19,20 @@ class AgentResolver implements ResolverInterface, AliasedInterface
     private $agentRepository;
 
     /**
+     * @var Security
+     */
+    private $security;
+
+    /**
      * AgentResolver constructor.
      *
      * @param AgentRepository $agentRepository
+     * @param Security        $security
      */
-    public function __construct(AgentRepository $agentRepository)
+    public function __construct(AgentRepository $agentRepository, Security $security)
     {
         $this->agentRepository = $agentRepository;
+        $this->security = $security;
     }
 
     /**
